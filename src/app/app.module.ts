@@ -3,11 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppRoutingModule,
+    AppComponent,
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, HttpClientModule

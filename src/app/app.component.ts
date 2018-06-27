@@ -9,12 +9,13 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
   title = 'Go Head';
   name = 'super me';
-  result = '';
+  result = String;
   address = {
     province: '浙江',
     city:  '杭州'
   };
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit(): void {
     this.http
