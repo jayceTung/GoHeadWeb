@@ -4,21 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { LoginComponent } from './login/login.component';
 import {AppRoutingModule} from './app-routing.module';
+import {SelectivePreloadingStrategy} from './selective-preloading-strategy';
 
 
 @NgModule({
   declarations: [
-    AppRoutingModule,
     AppComponent,
-    PageNotFoundComponent,
-    LoginComponent
+    PageNotFoundComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    AppRoutingModule,
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SelectivePreloadingStrategy],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
