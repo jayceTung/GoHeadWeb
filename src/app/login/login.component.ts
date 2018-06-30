@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpService} from '../http/http.service';
+import {environment} from '../../environments/environment';
+import {validate} from "codelyzer/walkerFactory/walkerFn";
 
 
 @Component({
@@ -7,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  username = 'super me';
-  passwd = '111111';
+  username = 'admin';
+  passwd = '123456';
 
-  constructor() {
+  constructor(private httpService: HttpService) {
   }
 
   ngOnInit() {
@@ -18,8 +21,13 @@ export class LoginComponent implements OnInit {
 
   onlogin(value) {
     console.dir(value);
-    console.log(value.username);
-    console.log(value.passwd);
+
+    const reqBody = {
+      userName: value.username,
+      password: value.passwd
+    };
+    this.httpService.post(environment.domain + 'users/login', reqBody);
+    // this.httpService.post('https://api.github.com/users/seeschweiler', null);
   }
 }
 
