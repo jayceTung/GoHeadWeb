@@ -36,7 +36,7 @@ export class HttpService {
   //   });
   // }
 
-  public post(reqUrl: String, reqBody) {
+  public post(reqUrl: string, reqBody) {
     this.http.post(reqUrl, reqBody, this.httpOptions)
       .subscribe(
         val => {
