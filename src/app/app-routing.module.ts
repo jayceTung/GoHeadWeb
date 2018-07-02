@@ -9,7 +9,8 @@ import {SelectivePreloadingStrategy} from './selective-preloading-strategy';
 const appRoutes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', loadChildren: './login/login.module#LoginModule'},
-  // {path: 'app', loadChildren: './main/main.module#MainModule'},
+  {path: 'app', loadChildren: './main/main.module#MainModule'},
+  // {path: 'home', loadChildren: './main/home/home.module#HomeModule'},
   {path: '**', component: PageNotFoundComponent}
 ];
 

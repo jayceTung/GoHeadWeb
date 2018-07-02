@@ -7,7 +7,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class HttpService {
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json;application/x-www-form-urlencodeed; charset=utf-8'})
+    headers: new HttpHeaders({'Content-Type': 'application/json;application/x-www-form-urlencodeed; charset=utf-8'})
   };
 
 
@@ -55,6 +55,27 @@ export class HttpService {
         }
       );
   }
+
+  public get(reqUrl: string) {
+    this.http.get(reqUrl, this.httpOptions)
+      .subscribe(
+        val => {
+          console.log('get请求成功', val);
+
+          if (val['resultCode'] === 200) {
+            // comp.getOk(val, flag);
+          } else {
+            // comp.getErr(val, flag);
+          }
+
+        },
+        error => {
+          console.log('get请求失败', error);
+          // comp.getErr(error, flag);
+        }
+      );
+  }
+
 
   // public get(url: string, paramMap: any = null, success: Function = function (successful, data, res) {
   // }, error: Function = function (successful, msg, err) {

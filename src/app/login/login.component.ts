@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../http/http.service';
 import {environment} from '../../environments/environment';
-import {validate} from "codelyzer/walkerFactory/walkerFn";
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -13,13 +13,13 @@ export class LoginComponent implements OnInit {
   username = 'admin';
   passwd = '123456';
 
-  constructor(private httpService: HttpService) {
+  constructor(private router: Router, private httpService: HttpService) {
   }
 
   ngOnInit() {
   }
 
-  onlogin(value) {
+  onLogin(value) {
     console.dir(value);
 
     const reqBody = {
@@ -27,7 +27,10 @@ export class LoginComponent implements OnInit {
       password: value.passwd
     };
     this.httpService.post(environment.domain + 'users/login', reqBody);
-    // this.httpService.post('https://api.github.com/users/seeschweiler', null);
+    //
+    // const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '登录成功！', 3000);
+    // this.toastService.toast(toastCfg);
+    this.router.navigate(['/app/home']);
   }
 }
 

@@ -6,7 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {AppRoutingModule} from './app-routing.module';
 import {SelectivePreloadingStrategy} from './selective-preloading-strategy';
-import {HttpService} from "./http/http.service";
+import {HttpService} from './http/http.service';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
