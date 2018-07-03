@@ -10,8 +10,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  username = 'admin';
-  passwd = '123456';
+  username: String;
+  passwd: String;
 
   constructor(private router: Router, private httpService: HttpService) {
   }
@@ -20,17 +20,21 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(value) {
+    const that = this;
     console.dir(value);
 
     const reqBody = {
       userName: value.username,
       password: value.passwd
     };
-    this.httpService.post(environment.domain + 'users/login', reqBody);
-    //
-    // const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '登录成功！', 3000);
-    // this.toastService.toast(toastCfg);
-    this.router.navigate(['/app/home']);
+
+    this.httpService.post(environment.domain + 'users/login', reqBody, function (message, data) {
+      console.log(message);
+      console.log(data);
+      that.router.navigate(['/app/home']);
+    }, function (message) {
+      console.log(message);
+    });
   }
 }
 
