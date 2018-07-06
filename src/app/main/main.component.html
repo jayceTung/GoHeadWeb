@@ -2,7 +2,7 @@
   <div class="c-left-wrapper" [ngClass]="{'c-left-wrapper-c': navClose,'c-left-wrapper-o': !navClose}">
     <div class="c-header">
       <img src="assets/img/logo.png" />
-      <h3>后台管理系统</h3>
+      <h3>{{'app.project' | translate}}</h3>
     </div>
     <div class="c-header-profile">
       <div ngbDropdown>
@@ -11,9 +11,9 @@
           <span ngbDropdownToggle>{{mainData.userData.userName}}</span>
         </div>
         <div ngbDropdownMenu  class="dropdown-menu animated fadeIn">
-          <button class="dropdown-item" (click)="userInfo()"><i class="fa  fa-user-circle-o  fa-fw"></i> 个人资料</button>
-          <button class="dropdown-item" (click)="passwordEdit()"><i class="fa  fa-key fa-fw"></i> 修改密码</button>
-          <button class="dropdown-item" (click)="exitSys()"><i class="fa  fa-sign-out fa-fw"></i> 退出系统</button>
+          <button class="dropdown-item" (click)="userInfo()"><i class="fa  fa-user-circle-o  fa-fw"></i>{{'main.userInfo' | translate}}</button>
+          <button class="dropdown-item" (click)="passwordEdit()"><i class="fa  fa-key fa-fw"></i>{{'main.edit_pw' | translate}}</button>
+          <button class="dropdown-item" (click)="exitSys()"><i class="fa  fa-sign-out fa-fw"></i>{{'main.exit' | translate}}</button>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@
       <div class="c-tools">
         <ul class="nav nav-pills pull-right">
           <li class="c-item" (click)="toHome()">
-            <i class="fa fa-home fa-fw"></i> 首页
+            <i class="fa fa-home fa-fw"></i> {{'app.index' | translate}}
           </li>
           <li class="c-user" ngbDropdown>
             <div ngbDropdownToggle class="d-inline-block">
@@ -42,9 +42,9 @@
               <span>{{mainData.userData.userName}}</span>
             </div>
             <div ngbDropdownMenu class="animated fadeIn">
-              <button class="dropdown-item"  (click)="userInfo()"><i class="fa  fa-user-circle-o  fa-fw"></i> 个人资料</button>
-              <button class="dropdown-item"  (click)="passwordEdit()"><i class="fa  fa-key fa-fw"></i> 修改密码</button>
-              <button class="dropdown-item"  (click)="exitSys()"><i class="fa  fa-sign-out fa-fw"></i> 退出系统</button>
+              <button class="dropdown-item"  (click)="userInfo()"><i class="fa  fa-user-circle-o  fa-fw"></i>{{'main.userInfo' | translate}}</button>
+              <button class="dropdown-item"  (click)="passwordEdit()"><i class="fa  fa-key fa-fw"></i>{{'main.edit_pw' | translate}}</button>
+              <button class="dropdown-item"  (click)="exitSys()"><i class="fa  fa-sign-out fa-fw"></i> {{'main.exit' | translate}}</button>
             </div>
           </li>
         </ul>

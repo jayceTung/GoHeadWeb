@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,10 @@ import * as $ from 'jquery';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Go Head';
   name = 'super me';
-  result = String;
-  address = {
-    province: '浙江',
-    city:  '杭州'
-  };
-  constructor(private http: HttpClient) {
+  lang = 'zh';
+
+  constructor(private http: HttpClient, private translate: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -24,6 +21,12 @@ export class AppComponent implements OnInit {
     //   .subscribe(data => {
     //     console.log(data);
     //   });
+
+    // ng2-translate国际化服务相关的配置
+    this.translate.addLangs(['zh', 'en']);
+    this.translate.setDefaultLang(this.lang);
+    const browserLang = this.translate.getBrowserLang();
+    this.translate.use(browserLang.match(/zh|en/) ? browserLang : 'zh');
   }
 }
 

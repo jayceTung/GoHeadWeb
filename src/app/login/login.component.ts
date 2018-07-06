@@ -10,8 +10,8 @@ import * as $ from 'jquery';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  username: String = 'admin';
-  passwd: String = 123456;
+  username = 'admin';
+  passwd = 123456;
 
   constructor(private router: Router, private httpService: HttpService) {
   }

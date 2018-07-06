@@ -1,38 +1,22 @@
 {
     "app": {
-        "articles": "动态",
-        "welcome": "欢迎你",
-        "logout": "退出",
-        "login": "登录",
-        "register": "注册",
-        "doc": "官方文档",
-        "console": "管理后台"
+      "project": "后台管理系统",
+      "version": "Copyright 2018 cjh. All Rights Reserved.",
+      "desc": "系统仅支持Edge、Google Chrome、Mozilla Firefox以及其它主流的浏览器，如您的浏览器无法使用本系统，请更换其它浏览器！",
+      "index": "首页"
     },
-    "post": {
-        "publish": "发布文章"
+    "login": {
+      "name": "后台管理系统登录",
+      "input_name": "请输入用户名...",
+      "input_pw": "请输入密码...",
+      "input_name_warn": "用户名必填，3-15位！",
+      "input_pw_warn": "密码必填，6-15位！",
+      "login": "登 录",
+      "forget_pw": "忘记密码？"
     },
-    "userRegister":{
-        "userSignUp":"用户注册",
-        "userName":"用户名：",
-        "userName-placeholder":"用户名4到32个字符",
-        "nickName":"昵称：",
-        "nickName-placeholder":"昵称2到32个字符",
-        "email":"常用邮箱：",
-        "email-placeholder":"常用邮箱，验证后才能登录",
-        "notice":"【如果您未在收件箱收到验证邮件，请到垃圾箱查收。】",
-        "password":"密码：",
-        "password-placeholder":"密码，至少8位",
-        "repeat-pwd":"重复密码：",
-        "repeat-pwd-placeholder":"重复密码，两次输入必须一致",
-        "signUp":"注册"
-    },
-    "userLogin":{
-        "userLogin":"用户登录"
-    },
-    "search": "搜索",
-    "submit": "提交",
-    "firstPage": "首页",
-    "lastPage": "末页",
-    "previousPage": "上一页",
-    "nextPage": "下一页"
+    "main": {
+      "userInfo": "个人资料",
+      "edit_pw": "修改密码",
+      "exit": "退出系统"
+    }
 }
