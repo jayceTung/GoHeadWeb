@@ -10,8 +10,8 @@ import * as $ from 'jquery';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  username: String;
-  passwd: String;
+  username: String = 'admin';
+  passwd: String = 123456;
 
   constructor(private router: Router, private httpService: HttpService) {
   }
@@ -30,13 +30,15 @@ export class LoginComponent implements OnInit {
       password: value.passwd
     };
 
-    this.httpService.post(environment.domain + 'users/login', reqBody, function (message, data) {
-      console.log(message);
-      console.log(data);
-      that.router.navigate(['/app/home']);
-    }, function (message) {
-      console.log(message);
-    });
+    that.router.navigate(['/app/home']);
+
+    // this.httpService.post(environment.domain + 'users/login', reqBody, function (message, data) {
+    //   console.log(message);
+    //   console.log(data);
+    //   that.router.navigate(['/app/home']);
+    // }, function (message) {
+    //   console.log(message);
+    // });
   }
 }
 

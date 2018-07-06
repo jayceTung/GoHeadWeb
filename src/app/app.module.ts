@@ -8,17 +8,21 @@ import {AppRoutingModule} from './app-routing.module';
 import {SelectivePreloadingStrategy} from './selective-preloading-strategy';
 import {HttpService} from './http/http.service';
 import { MainComponent } from './main/main.component';
+import { HomeComponent } from './home/home.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [
     SelectivePreloadingStrategy,
