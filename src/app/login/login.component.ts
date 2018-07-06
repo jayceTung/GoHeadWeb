@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../http/http.service';
 import {environment} from '../../environments/environment';
 import {Router} from '@angular/router';
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    $('body').append('<h3>test</h3>');
+    console.log('add test');
   }
 
   onLogin(value) {
