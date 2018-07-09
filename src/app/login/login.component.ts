@@ -30,45 +30,22 @@ export class LoginComponent implements OnInit {
       password: value.passwd
     };
 
+    // 测试逻辑
     that.router.navigate(['/app/home']);
 
-    // this.httpService.post(environment.domain + 'users/login', reqBody, function (message, data) {
-    //   console.log(message);
-    //   console.log(data);
-    //   that.router.navigate(['/app/home']);
-    // }, function (message) {
-    //   console.log(message);
-    // });
+    this.httpService.post(environment.domain + 'users/login', reqBody, function (message, data) {
+      console.log(message);
+      console.log(data);
+      that.router.navigate(['/app/home']);
+    }, function (message) {
+      console.log(message);
+    });
   }
 }
 
 
 
-// loginForm: FormGroup;
-//
-// constructor(
-//   private router: Router,
-//   private toastService: ToastService,
-//   private httpService: HttpService,
-//   private userBusinessService:UserBusinessService,
-//   private formBuilder: FormBuilder) {
-//   let userNameFc = new FormControl('sysadmin', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(15)]));
-//   let passwordFc = new FormControl('sysadmin', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(15)]));
-//
-//   this.loginForm = this.formBuilder.group({
-//     userName: userNameFc,
-//     password: passwordFc
-//   });
-// }
-//
-// /**
-//  * 初始化
-//  */
-// ngOnInit() {
-//
-// }
-//
-//
+
 // /**
 //  * 登录
 //  */
