@@ -3,6 +3,7 @@ import {HttpService} from '../http/http.service';
 import {environment} from '../../environments/environment';
 import {Router} from '@angular/router';
 import * as $ from 'jquery';
+import {LoginData} from "./login-model";
 
 @Component({
   selector: 'app-login',
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
 
     this.httpService.post(environment.domain + 'users/login', reqBody, function (message, data) {
       console.log(message);
-      console.log(data);
+      console.log(data.currentUser.id);
       that.router.navigate(['/app/home']);
     }, function (message) {
       console.log(message);
