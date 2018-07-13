@@ -11,6 +11,7 @@ import {HomeComponent} from './home/home.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import {UserInfoServiceService} from './info/user-info-service.service';
 
 function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,7 +40,8 @@ function createTranslateLoader(http: HttpClient) {
   providers: [
     SelectivePreloadingStrategy,
     HttpService,
-    TranslateService
+    TranslateService,
+    UserInfoServiceService
   ],
   bootstrap: [AppComponent]
 })

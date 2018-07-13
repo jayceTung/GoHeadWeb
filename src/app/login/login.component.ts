@@ -3,7 +3,8 @@ import {HttpService} from '../http/http.service';
 import {environment} from '../../environments/environment';
 import {Router} from '@angular/router';
 import * as $ from 'jquery';
-import {LoginData} from "./login-model";
+import {UserInfoServiceService} from '../info/user-info-service.service';
+import {UserInfoData} from './user-info-model';
 
 @Component({
   selector: 'app-login',
@@ -14,29 +15,27 @@ export class LoginComponent implements OnInit {
   username = 'admin';
   passwd = 123456;
 
-  constructor(private router: Router, private httpService: HttpService) {
+  constructor(private router: Router, private httpService: HttpService, private userInfo: UserInfoServiceService) {
   }
 
   ngOnInit() {
     $('body').append('<h3>test</h3>');
-    console.log('add test');
   }
 
   onLogin(value) {
     const that = this;
-    console.dir(value);
-
     const reqBody = {
       userName: value.username,
       password: value.passwd
     };
 
     // 测试逻辑
-    that.router.navigate(['/app/home']);
+    // that.router.navigate(['/app/home']);
 
     this.httpService.post(environment.domain + 'users/login', reqBody, function (message, data) {
-      console.log(message);
-      console.log(data.currentUser.id);
+      const user = data as UserInfoData;
+      console.log(user);
+      that.userInfo.setUserInfo(user);
       that.router.navigate(['/app/home']);
     }, function (message) {
       console.log(message);

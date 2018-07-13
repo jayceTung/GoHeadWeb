@@ -18,16 +18,16 @@ export class UserData {
   userName: string;
 
   // 头像
-  userAvatar: string;
+  userAvator: string;
 
   // 手机
-  mobilePhone: string;
+  phone: string;
 
   // 邮箱
   email: string;
 
   // 岗位
-  positions: string;
+  work: string;
 }
 
 /**
