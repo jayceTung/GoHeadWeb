@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import * as $ from 'jquery';
 import {UserInfoServiceService} from '../info/user-info-service.service';
 import {UserInfoData} from './user-info-model';
+import * as Mock from 'mockjs';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     $('body').append('<h3>test</h3>');
+    const data = Mock.mock({
+      'list|1-10': [{
+        'id|+1': 1
+      }]
+    });
+    console.log(data);
   }
 
   onLogin(value) {
